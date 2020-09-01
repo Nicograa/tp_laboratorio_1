@@ -1,10 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "funciones.h"
 
-int SumarNumeros(int, int);
-int restarNumeros(int, int);
-int multiplicarNumeros(int, int);
-float dividirNumeros(int, int);
 
 int main()
 {
@@ -14,53 +11,56 @@ int main()
     int resta;
     int multiplicacion;
     float division;
+    int resultadoA;
+    int resultadoB;
+    int opcionMenu;
 
 
-    printf("Ingrese un numero: ");
-    scanf("%d", &operandoA);
-    printf("Ingrese otro numero: ");
-    scanf("%d", &operandoB);
+    do
+     {
+        printf("\nIngrese un numero A: ");
+        scanf("%d", &operandoA);
 
-    suma = SumarNumeros(operandoA, operandoB);
-    printf("El resultado de A+B es: %d\n", suma);
+        printf("\nIngrese un numero B: ");
+        scanf("%d", &operandoB);
 
-    resta= restarNumeros(operandoA, operandoB);
-    printf("La resta de A-B es: %d\n", resta);
 
-    multiplicacion= multiplicarNumeros(operandoA, operandoB);
-    printf("El resultado de A*B es: %d\n", multiplicacion);
+        printf("\n1-Sumar numeros\n2-Restar numeros\n3-Multiplicar numeros\n4-Dividir numeros\n5-Factorizar numeros\n6-Salir.\n");
+        printf("\nElija una opcion:");
+        scanf("%d", &opcionMenu);
 
-    division= dividirNumeros(operandoA, operandoB);
-    printf("El resultado de A/B es: %.2f", division);
+        switch(opcionMenu)
+        {
+            case 1:
+                suma = SumarNumeros(operandoA, operandoB);
+                printf("\nEl resultado de A+B es: %d\n", suma);
+                break;
+            case 2:
+                resta= restarNumeros(operandoA, operandoB);
+                printf("\nLa resta de A-B es: %d\n", resta);
+                break;
+            case 3:
+                multiplicacion= multiplicarNumeros(operandoA, operandoB);
+                printf("\nEl resultado de A*B es: %d\n", multiplicacion);
+                break;
+            case 4:
+                division= dividirNumeros(operandoA, operandoB);
+                printf("\nEl resultado de A/B es: %.2f\n", division);
+                break;
+            case 5:
+                resultadoA = calcularFactorialA(operandoA);
+                printf("\nEl factorial de %d es: %d\n", operandoA, resultadoA);
+
+                resultadoB = calcularFactorialB(operandoB);
+                printf("\nEl factorial de %d es: %d\n", operandoB, resultadoB);
+                break;
+            case 6:
+                printf("\nGracias por utilizar nuestro programa\n");
+                break;
+        }
+     }while(opcionMenu!=6);
+
+
 
     return 0;
 }
-
-int restarNumeros(int primerNumero, int segundoNumero)
-{
-    int resta;
-    resta = primerNumero-segundoNumero;
-    return resta;
-}
-
-int SumarNumeros(int primerNumero, int segundoNumero)
-{
-    int suma;
-    suma = primerNumero + segundoNumero;
-    return suma;
-}
-
-int multiplicarNumeros(int primerNumero, int segundoNumero)
-{
-    int multiplicacion;
-    multiplicacion = primerNumero*segundoNumero;
-    return multiplicacion;
-}
-
-float dividirNumeros(int primerNumero, int segundoNumero)
-{
-    float division;
-    division = (float)primerNumero/segundoNumero;
-    return division;
-}
-
