@@ -21,10 +21,10 @@ int main()
         printf("\nIngrese un numero A: ");
         scanf("%d", &operandoA);
 
-        printf("\nIngrese un numero B: ");
+        printf("\nIngrese otro numero B: ");
         scanf("%d", &operandoB);
 
-
+        printf( "\n*** MENU CALCULADORA ***" );
         printf("\n1-Sumar numeros\n2-Restar numeros\n3-Multiplicar numeros\n4-Dividir numeros\n5-Factorizar numeros\n6-Salir.\n");
         printf("\nElija una opcion:");
         scanf("%d", &opcionMenu);
@@ -44,9 +44,15 @@ int main()
                 printf("\nEl resultado de A*B es: %d\n", multiplicacion);
                 break;
             case 4:
-                division= dividirNumeros(operandoA, operandoB);
-                printf("\nEl resultado de A/B es: %.2f\n", division);
-                break;
+                if(operandoB!=0)
+                {
+                    division= dividirNumeros(operandoA, operandoB);
+                    printf("\nEl resultado de A/B es: %.2f\n", division);
+                }else
+                    {
+                        printf( "\n ERROR: No se puede dividir entre cero.\n" );
+                    }
+                    break;
             case 5:
                 resultadoA = calcularFactorialA(operandoA);
                 printf("\nEl factorial de %d es: %d\n", operandoA, resultadoA);
@@ -64,3 +70,4 @@ int main()
 
     return 0;
 }
+
