@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1599333427 source:c:\users\nicoo\desktop\utn\programacion 1\tp opcion 2\funciones.c
+	"funciones.h"
+
+1599333427 c:\users\nicoo\desktop\utn\programacion 1\tp opcion 2\funciones.h
+	<stdio.h>
+
+1599334177 source:c:\users\nicoo\desktop\utn\programacion 1\tp opcion 2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+
