@@ -30,7 +30,7 @@ int main()
     {
 
 
-        printf("\nElija una opcion:");
+        printf("\nIngrese una opcion:");
         scanf("%d", &opcionMenu);
 
         switch(opcionMenu)
@@ -50,8 +50,8 @@ int main()
                 resta= restarNumeros(operandoA, operandoB);
                 multiplicacion= multiplicarNumeros(operandoA, operandoB);
                 division= dividirNumeros(operandoA, operandoB);
-                resultadoA = calcularFactorialA(operandoA);
-                resultadoB = calcularFactorialB(operandoB);
+                resultadoA = calcularFactorial(operandoA);
+                resultadoB = calcularFactorial(operandoB);
                 printf("\nCALCULANDO TODAS LAS OPERACIONES...... \n");
                 break;
 
@@ -110,6 +110,9 @@ int main()
                 printf("\nGracias por utilizar nuestro programa\n");
                 printf("..........................Grana Nicolas");
                 break;
+
+            default: printf("\ERROR INGRESO UNA OPCION INCORRECTA\n");
+                     break;
         }
     }while(opcionMenu!=5);
 

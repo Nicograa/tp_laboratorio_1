@@ -47,4 +47,4 @@ int calcularFactorial(int operandoA)
 }
 
 
-}
+
