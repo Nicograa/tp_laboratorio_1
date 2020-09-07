@@ -71,11 +71,17 @@ int main()
 
             case 3:
                 suma = SumarNumeros(operandoA, operandoB);
+
                 resta= restarNumeros(operandoA, operandoB);
+
                 multiplicacion= multiplicarNumeros(operandoA, operandoB);
+
                 division= dividirNumeros(operandoA, operandoB);
+
                 resultadoA= calcularFactorial(operandoA);
+
                 resultadoB= calcularFactorial(operandoB);
+
                 printf("\nCALCULANDO TODAS LAS OPERACIONES...... \n");
                 break;
 
