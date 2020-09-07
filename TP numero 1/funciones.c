@@ -1,3 +1,4 @@
+
 #include "funciones.h"
 
 float restarNumeros(float primerNumero, float segundoNumero)
@@ -28,19 +29,27 @@ float dividirNumeros(float primerNumero, float segundoNumero)
     return division;
 }
 
-int calcularFactorial(float operandoA)
+int calcularFactorial(int numero)
 {
-    int resultadoA;
+    int resultado;
 
-    if(operandoA == 0)
+    if(numero<0)
+        {
+            return 0;
+        }
+
+    if(numero == 0)
     {
-        resultadoA = 1;
+        resultado = 1;
     }
     else
     {
-         resultadoA = operandoA * calcularFactorial(operandoA - 1);
+         resultado = numero * calcularFactorial(numero - 1);
     }
 
-    return resultadoA;
+    return resultado;
 
 }
+
+
+

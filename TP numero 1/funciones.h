@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 
 /** \brief Calcula la suma entre dos numeros
@@ -17,10 +18,11 @@ float SumarNumeros(float, float);
  *
  */
 float restarNumeros(float, float);
+
 /** \brief Calcula la multiplicacion entre dos numeros
  *
  * \param float Multiplicando A (operando A)
- * \param float Multiplicador A (operando A)
+ * \param float Multiplicador B (operando B)
  * \return float El resultado de la multiplicacion entre dos numeros
  *
  */
@@ -35,13 +37,12 @@ float multiplicarNumeros(float, float);
  */
 float dividirNumeros(float, float);
 
-
-
-/** \brief Calcula el factorial de los numeros
+/** \brief calcula el factorial de un numero entero
  *
- * \param float El numero que se va a factorizar
- * \return int EL factorial del numero
+ * \param int El valor sobre el cual se calcula el factorial
+ * \return int El resultado del factorial del numero
  *
  */
-int calcularFactorial(float);
+int calcularFactorial(int);
+
 

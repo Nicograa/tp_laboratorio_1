@@ -1,3 +1,21 @@
+/* GRAÑA NICOLAS
+Hacer una calculadora. Para ello el programa iniciará y contará con un menú de opciones:
+1. Ingresar 1er operando (A=x)
+2. Ingresar 2do operando (B=y)
+3. Calcular todas las operaciones
+a) Calcular la suma (A+B)
+b) Calcular la resta (A-B)
+c) Calcular la division (A/B)
+d) Calcular la multiplicacion (A*B)
+e) Calcular el factorial (A!)
+4. Informar resultados
+a) “El resultado de A+B es: r”
+b) “El resultado de A-B es: r”
+c) “El resultado de A/B es: r” o “No es posible dividir por cero”
+d) “El resultado de A*B es: r”
+e) “El factorial de A es: r1 y El factorial de B es: r2”
+5. Salir
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include "funciones.h"
@@ -5,6 +23,7 @@
 
 int main()
 {
+
     float operandoA;
     float operandoB;
     float suma;
@@ -15,33 +34,38 @@ int main()
     int resultadoB;
     int opcionMenu;
 
-    printf("\n   ***CALCULADORA ***\n\n" );
 
+
+
+
+    printf("\n>>>>>>>CALCULADORA<<<<<<<\n\n" );
 
     printf("\n*** MENU CALCULADORA ***\n" );
-    printf("\n1-Ingrese un numero 'A':\n");
-    printf("\n2-Ingrese un numero 'B':\n");
-    printf("\n3-Calcular todas las operaciones\n");
-    printf("\n4-Informar resultados\n");
-    printf("\n5-Salir.\n");
+    printf("1-Ingresar 1er operando 'A': \n");
+    printf("2-Ingresar 2do operando 'B': \n");
+    printf("3-Calcular todas las operaciones\n");
+    printf("4-Informar resultados\n");
+    printf("5-Salir.\n");
+
+
+
+
 
 
     do
     {
-
-
         printf("\nIngrese una opcion:");
         scanf("%d", &opcionMenu);
 
         switch(opcionMenu)
         {
             case 1:
-                printf("\nIngresar operando 'A': ");
+                printf("\nIngresar 1er operando 'A'= ");
                 scanf("%f", &operandoA);
                 break;
 
             case 2:
-                printf("\nIngresar operando 'B': ");
+                printf("\nIngresar 2do operando 'B'= ");
                 scanf("%f", &operandoB);
                 break;
 
@@ -50,13 +74,13 @@ int main()
                 resta= restarNumeros(operandoA, operandoB);
                 multiplicacion= multiplicarNumeros(operandoA, operandoB);
                 division= dividirNumeros(operandoA, operandoB);
-                resultadoA = calcularFactorial(operandoA);
-                resultadoB = calcularFactorial(operandoB);
+                resultadoA= calcularFactorial(operandoA);
+                resultadoB= calcularFactorial(operandoB);
                 printf("\nCALCULANDO TODAS LAS OPERACIONES...... \n");
                 break;
 
             case 4:
-
+                printf("-------------------------------------------------------------------------------\n\n");
                 printf("\n                                SUMA");
                 printf("\n-------------------------------------------------------------------------------\n");
                 printf("Operando A= %.2f\n", operandoA);
@@ -90,28 +114,31 @@ int main()
                     printf("-------------------------------------------------------------------------------\n\n");
                 }else
                     {
+                        printf("\n                                Division");
+                        printf("\n-------------------------------------------------------------------------------\n");
                         printf( "\n ERROR: No se puede dividir entre cero.\n" );
+                        printf("-------------------------------------------------------------------------------\n\n");
                     }
 
-                 printf("\n                                Factorial");
-                printf("\n-------------------------------------------------------------------------------\n");
 
-                printf("Operando A= %.2f\n", operandoA);
-                printf("Resultado: \n");
-                printf("El factorial de %.2f es= %d\n", operandoA, resultadoA);
-                printf("\n-------------------------------------------------------------------------------\n");
+                    printf("\n                                Factorial");
+                    printf("\n-------------------------------------------------------------------------------\n");
+                    printf("Operando A= %.2f\n", operandoA);
+                    printf("Resultado: \n");
+                    printf("El factorial de %.2f es= %d\n", operandoA, resultadoA);
+                    printf("\n-------------------------------------------------------------------------------\n");
+                    printf("Operando B= %.2f\n", operandoB);
+                    printf("Resultado: \n");
+                    printf("El factorial de %.2f es= %d\n", operandoB, resultadoB);
+                    printf("-------------------------------------------------------------------------------\n\n");
 
-                printf("Operando B= %.2f\n", operandoB);
-                printf("Resultado: \n");
-                printf("El factorial de %.2f es= %d\n", operandoB, resultadoB);
-                printf("-------------------------------------------------------------------------------\n\n");
-                 break;
+                break;
             case 5:
-                printf("\nGracias por utilizar nuestro programa\n");
-                printf("..........................Grana Nicolas");
+                printf("\nGracias por utilizar nuestro programa.\n");
+                printf("..........................Grana Nicolas 1c.");
                 break;
 
-            default: printf("\ERROR INGRESO UNA OPCION INCORRECTA\n");
+            default: printf("\n>>ERROR INGRESO UNA OPCION INCORRECTA<<\n");
                      break;
         }
     }while(opcionMenu!=5);
