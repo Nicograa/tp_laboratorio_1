@@ -40,12 +40,7 @@ int main()
 
     printf("\n>>>>>>>CALCULADORA<<<<<<<\n\n" );
 
-    printf("\n*** MENU CALCULADORA ***\n" );
-    printf("1-Ingresar 1er operando 'A': \n");
-    printf("2-Ingresar 2do operando 'B': \n");
-    printf("3-Calcular todas las operaciones\n");
-    printf("4-Informar resultados\n");
-    printf("5-Salir.\n");
+
 
 
 
@@ -54,6 +49,12 @@ int main()
 
     do
     {
+        printf("\n*** MENU CALCULADORA ***\n" );
+        printf("1-Ingresar 1er operando 'A': \n");
+        printf("2-Ingresar 2do operando 'B': \n");
+        printf("3-Calcular todas las operaciones\n");
+        printf("4-Informar resultados\n");
+        printf("5-Salir.\n");
         printf("\nIngrese una opcion:");
         scanf("%d", &opcionMenu);
 
@@ -82,6 +83,8 @@ int main()
 
                 resultadoB= calcularFactorial(operandoB);
 
+                printf("\nA=%.2f\n",operandoA);
+                printf("\nB=%.2f\n",operandoB);
                 printf("\nCALCULANDO TODAS LAS OPERACIONES...... \n");
                 break;
 
@@ -130,21 +133,36 @@ int main()
                     printf("\n                                Factorial");
                     printf("\n-------------------------------------------------------------------------------\n");
                     printf("Operando A= %.2f\n", operandoA);
-                    printf("Resultado: \n");
-                    printf("El factorial de %.2f es= %d\n", operandoA, resultadoA);
-                    printf("\n-------------------------------------------------------------------------------\n");
-                    printf("Operando B= %.2f\n", operandoB);
-                    printf("Resultado: \n");
-                    printf("El factorial de %.2f es= %d\n", operandoB, resultadoB);
-                    printf("-------------------------------------------------------------------------------\n\n");
 
+                     if (operandoA < 1 || operandoA - (int) operandoA != 0)
+                    {
+                        printf("ERROR no se pudo hallar el factorial de %.2f.\nEl numero tiene que ser mayor a 0 o no debe ser un numero decimal\n", operandoA);
+                    }else
+                        {
+                            printf("Resultado: \n");
+                            printf("El factorial de %.0f es= %d\n", operandoA, resultadoA);
+                        }
+
+                    printf("-------------------------------------------------------------------------------\n");
+
+                    printf("Operando B= %.2f\n", operandoB);
+
+                    if (operandoB < 1 || operandoB - (int) operandoB != 0)
+                    {
+                        printf("ERROR no se pudo hallar el factorial de %.2f.\nEl numero tiene que ser mayor a 0 o no debe ser un numero decimal\n", operandoB);
+                    } else
+                        {
+                            printf("Resultado: \n");
+                            printf("El factorial de %.0f es= %d\n", operandoB, resultadoB);
+                        }
+                    printf("-------------------------------------------------------------------------------\n\n");
                 break;
             case 5:
                 printf("\nGracias por utilizar nuestro programa.\n");
                 printf("..........................Grana Nicolas 1c.");
                 break;
 
-            default: printf("\n>>ERROR INGRESO UNA OPCION INCORRECTA<<\n");
+            default: printf("\n>>ERROR INGRESA UNA OPCION CORRECTA<<\n");
                      break;
         }
     }while(opcionMenu!=5);
